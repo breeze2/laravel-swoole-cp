@@ -11,6 +11,7 @@ swoole connection pool for laravel
 1. laravel/framework/src/Illuminate/Database/MySqlSwooleProxyConnection.php
 2. laravel/framework/src/Illuminate/Database/Connectors/MySqlSwooleProxyConnector.php
 3. laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php
+
 只要将这三个文件放到Laravel项目的vendor文件夹下便可。
 
 `MySqlSwooleProxyConnection.php`和`MySqlSwooleProxyConnector.php`是模仿Laravel框架自有的`MySqlConnection.php`和`MySqlConnector.php`新增编写的；而`ConnectionFactory.php`则是在Laravel框架原有的基础上修改的，主要是调用`MySqlSwooleProxyConnection`和`MySqlSwooleProxyConnector`这两个新增类。
