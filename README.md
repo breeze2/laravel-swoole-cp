@@ -3,8 +3,8 @@ swoole connection pool for laravel
 [php-cp](https://github.com/swoole/php-cp)的Laravel驱动
 
 **注意**
-1. 仅在Laravel5.4~5.5上测试通过，其他版本可以不使用；
-2. PHP7环境请使用[breeze2/php-cp](https://github.com/breeze2/php-cp)。
+1. 仅在Laravel5.4~5.5上测试通过，其他版本可能不适用；
+2. PHP7环境请使用[breeze2/php-cp](https://github.com/breeze2/php-cp)，目前[swoole/php-cp](https://github.com/swoole/php-cp)v1.5.0版本对PHP7存在问题。
 
 主要是三个文件：
 1. laravel/framework/src/Illuminate/Database/MySqlSwooleProxyConnection.php
