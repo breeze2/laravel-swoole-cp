@@ -242,7 +242,7 @@ class ConnectionFactory
         }
 
         switch ($config['driver']) {
-            case 'mysql-sp':
+            case 'mysql-cp':
                 return new MySqlSwooleProxyConnector;
             case 'mysql':
                 return new MySqlConnector;
@@ -276,7 +276,7 @@ class ConnectionFactory
         }
 
         switch ($driver) {
-            case 'mysql-sp':
+            case 'mysql-cp':
                 return new MySqlSwooleProxyConnection($connection, $database, $prefix, $config);
             case 'mysql':
                 return new MySqlConnection($connection, $database, $prefix, $config);

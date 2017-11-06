@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql-sp'),
+    'default' => env('DB_CONNECTION', 'mysql-cp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,8 +39,8 @@ return [
             'prefix' => '',
         ],
 
-        'mysql-sp' => [
-            'driver' => 'mysql-sp',
+        'mysql-cp' => [
+            'driver' => 'mysql-cp',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),

@@ -38,7 +38,7 @@ class ConnectionFactory
         }
 
         switch ($config['driver']) {
-            case 'mysql-sp':
+            case 'mysql-cp':
                 return new MySqlSwooleProxyConnector;
             case 'mysql':
                 return new MySqlConnector;
@@ -60,7 +60,7 @@ class ConnectionFactory
         }
 
         switch ($driver) {
-            case 'mysql-sp':
+            case 'mysql-cp':
                 return new MySqlSwooleProxyConnection($connection, $database, $prefix, $config);
             case 'mysql':
                 return new MySqlConnection($connection, $database, $prefix, $config);
@@ -77,19 +77,19 @@ class ConnectionFactory
 }
 ```
 
-注意，这里将php-cp的数据库连接驱动命名为`mysql-sp`，所以在Laravel项目的数据库配置`config/database.php`里应该这样配置php-cp的连接驱动：
+注意，这里将php-cp的数据库连接驱动命名为`mysql-cp`，所以在Laravel项目的数据库配置`config/database.php`里应该这样配置php-cp的连接驱动：
 
 ```php
 <?php
 // config/database.php
 
 return [
-    'default' => env('DB_CONNECTION', 'mysql-sp'),
+    'default' => env('DB_CONNECTION', 'mysql-cp'),
 
     'connections' => [
 
-        'mysql-sp' => [
-            'driver' => 'mysql-sp',
+        'mysql-cp' => [
+            'driver' => 'mysql-cp',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
